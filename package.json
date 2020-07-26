@@ -4,7 +4,8 @@
   "description": "A GraphQL wrapper for the tempus.xyz api",
   "main": "lib/schema.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "graphiql": "babel-node ./scripts/graphiql.js"
   },
   "keywords": [
     "tempus",
@@ -12,15 +13,23 @@
     "graphql"
   ],
   "author": "Aris Poloway",
-  "type": "module",
+  "type": "commonjs",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/arispoloway/tempus-api-graphql.git",
+    "url": "https://github.com/arispoloway/tempus-api-graphql.git"
   },
   "dependencies": {
     "dataloader": "^2.0.0",
     "graphql": "^15.3.0",
     "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.10.5",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "express": "^4.17.1",
+    "express-graphql": "^0.11.0"
   }
 }
