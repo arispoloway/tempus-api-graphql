@@ -9,3 +9,4 @@ app.use('/graphiql', graphqlHTTP({
 }));
 app.listen(4000);
 console.log('GraphQL server started at http://localhost:4000/graphql');
+console.log('GraphiQL server started at http://localhost:4000/graphiql');
