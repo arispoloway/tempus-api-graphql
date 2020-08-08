@@ -26,7 +26,8 @@
   "dependencies": {
     "graphql": "^15.3.0",
     "lru-cache": "^6.0.0",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.0",
+    "regenerator-runtime": "^0.13.7"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.5",
