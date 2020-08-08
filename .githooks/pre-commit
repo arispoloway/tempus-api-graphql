@@ -2,8 +2,6 @@
 
 set -eo pipefail
 
-npm run build
-
 JS_FILES=$(git diff --cached --name-only --diff-filter=ACMR "lib/**.js" | sed 's| |\\ |g')
 if [ -n "$JS_FILES" ]; then
   npm run format

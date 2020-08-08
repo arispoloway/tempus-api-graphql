@@ -14,9 +14,9 @@ module.exports = {
       files: ["*.js"],
       rules: {
         "import/no-cycle": "off",
-        "max-classes-per-file": "off"
-      }
-    }
+        "max-classes-per-file": "off",
+      },
+    },
   ],
   rules: {
     "prettier/prettier": ["error"],
