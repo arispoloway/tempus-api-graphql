@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "graphiql": "babel-node ./scripts/graphiql.js",
     "build": "babel lib -d dist",
-    "lint": "eslint ."
+    "lint": "eslint ./lib"
   },
   "keywords": [
     "tempus",
