@@ -1,12 +1,15 @@
-import schema from '../lib/schema.js';
-import express from 'express';
-import { graphqlHTTP } from 'express-graphql';
+import express from "express";
+import { graphqlHTTP } from "express-graphql";
+import schema from "../dist/schema.js";
 
-let app = express();
-app.use('/graphiql', graphqlHTTP({
-    schema: schema,
-    graphiql: true
-}));
+const app = express();
+app.use(
+  "/graphiql",
+  graphqlHTTP({
+    schema,
+    graphiql: true,
+  })
+);
 app.listen(4000);
-console.log('GraphQL server started at http://localhost:4000/graphql');
-console.log('GraphiQL server started at http://localhost:4000/graphiql');
+console.log("GraphQL server started at http://localhost:4000/graphql");
+console.log("GraphiQL server started at http://localhost:4000/graphiql");

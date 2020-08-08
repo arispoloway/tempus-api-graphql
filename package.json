@@ -2,10 +2,12 @@
   "name": "tempus-api-graphql",
   "version": "0.0.3",
   "description": "A GraphQL wrapper for the tempus.xyz api",
-  "main": "lib/schema.js",
+  "main": "dist/schema.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "graphiql": "babel-node ./scripts/graphiql.js"
+    "graphiql": "babel-node ./scripts/graphiql.js",
+    "build": "babel lib -d dist",
+    "lint": "eslint ."
   },
   "keywords": [
     "tempus",
@@ -29,7 +31,13 @@
     "@babel/core": "^7.10.5",
     "@babel/node": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
+    "eslint": "^7.6.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-prettier": "^3.1.4",
     "express": "^4.17.1",
-    "express-graphql": "^0.11.0"
+    "express-graphql": "^0.11.0",
+    "prettier": "^2.0.5"
   }
 }
