@@ -76,6 +76,8 @@ This would request the 4 endpoints required to resolve all of the requested fiel
 }
 ```
 
+Check out an [example project](https://xff7m.csb.app/) that uses `tempus-api-graphql` to power an entirely in-browser `GraphiQL` instance. Source for this example found [here](https://codesandbox.io/s/graphiql-tempus-api-graphql-demo-xff7m).
+
 ### Standalone
 
 This repo also includes a `graphiql` script for running a standalone GraphQL server with `express-graphql`.
