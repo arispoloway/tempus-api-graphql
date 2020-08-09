@@ -3,6 +3,7 @@ module.exports = {
     browser: true,
     commonjs: true,
     es2020: true,
+    jest: true,
   },
   extends: ["airbnb-base", "prettier"],
   plugins: ["prettier"],
@@ -14,7 +15,6 @@ module.exports = {
       files: ["*.js"],
       rules: {
         "import/no-cycle": "off",
-        "max-classes-per-file": "off",
       },
     },
   ],
