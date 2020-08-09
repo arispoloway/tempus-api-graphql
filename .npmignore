@@ -1,2 +1,8 @@
-src/
+lib/
 scripts/
+.githooks
+.github
+.babelrc
+.eslintignore
+.eslintrc.js
+.prettierignore
