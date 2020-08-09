@@ -1,8 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import express from "express";
-import { graphqlHTTP } from "express-graphql";
+const express = require("express");
+const { graphqlHTTP } = require("express-graphql");
 /* eslint-enable import/no-extraneous-dependencies */
-import schema from "../dist/schema";
+const schema = require("../dist/schema").default;
 
 const app = express();
 app.use(
