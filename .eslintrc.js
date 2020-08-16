@@ -15,6 +15,7 @@ module.exports = {
       files: ["*.js"],
       rules: {
         "import/no-cycle": "off",
+        "class-methods-use-this": "off",
       },
     },
   ],
