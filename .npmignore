@@ -1,5 +1,7 @@
 lib/
 scripts/
+**/__test__/
+**/__mocks__/
 .githooks
 .github
 .babelrc
