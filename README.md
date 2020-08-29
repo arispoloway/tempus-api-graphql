@@ -44,7 +44,7 @@ graphql(schema, query).then((result) => {
 });
 ```
 
-This would request the 4 endpoints required to resolve all of the requested fields (map overview, map record listing, record overview, demo overview). At time of writing, that query results in the following:
+This would request the 4 endpoints required to resolve all of the requested fields (map overview, map record listing, demo overview, server listing). At time of writing, that query results in the following:
 
 ```json
 {
