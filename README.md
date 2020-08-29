@@ -21,6 +21,10 @@ const query = `
   map(name: "jump_rush") {
     authors {
       name
+      player {
+        steamId
+        country
+      }
     }
     records(limit: 1) {
       soldier {
@@ -32,19 +36,30 @@ const query = `
           url
           server {
             name
+            online
           }
         }
       }
     }
   }
-}
-`;
+}`;
 graphql(schema, query).then((result) => {
   console.log(result);
 });
 ```
 
-This would request the 4 endpoints required to resolve all of the requested fields (map overview, map record listing, demo overview, server listing). At time of writing, that query results in the following:
+Under the hood, this would request the 6 endpoints required to resolve all of the requested fields:
+
+- `jump_rush` map overview
+- `jump_rush` map record listing
+- `author` player stats
+- `record` overview
+- `demo` overview
+- `server` status list
+
+These requests are cached and the resolvers attempt to make the fewest requests possible to resolve the requested fields.
+
+At time of writing, that query results in the following:
 
 ```json
 {
@@ -52,20 +67,25 @@ This would request the 4 endpoints required to resolve all of the requested fiel
     "map": {
       "authors": [
         {
-          "name": "Bob+M|M+"
+          "name": "Bob+M|M+",
+          "player": {
+            "steamId": "STEAM_0:1:19865974",
+            "country": "United States"
+          }
         }
       ],
       "records": {
         "soldier": [
           {
-            "duration": 46.9195628166199,
+            "duration": 46.91956281661987,
             "player": {
               "name": "Boshy"
             },
             "demo": {
               "url": "http://tempus-demos.s3.amazonaws.com/23/auto-20181102-140940-jump_rush.zip",
               "server": {
-                "name": "jump.tf (France) Rank 50 Only"
+                "name": "jump.tf (France) Rank 50 Only",
+                "online": true
               }
             }
           }
