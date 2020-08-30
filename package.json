@@ -6,6 +6,7 @@
   "scripts": {
     "test": "npm run build && jest",
     "graphiql": "npm run build && node ./scripts/graphiql.js",
+    "dump-sdl": "npm run build && node ./scripts/dump_sdl.js",
     "build": "babel lib -d dist",
     "prepare": "npm run build",
     "lint": "eslint .",

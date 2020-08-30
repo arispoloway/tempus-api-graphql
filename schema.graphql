@@ -1,0 +1,200 @@
+type Query {
+  map(name: String, id: Int): Map
+  maps(search: String, start: Int, limit: Int): [Map!]!
+  player(id: Int): Player
+  record(id: Int): Record
+  demo(id: Int): Demo
+  server(id: Int): Server
+  servers(search: String, start: Int, limit: Int): [Server!]!
+  activity: Activity!
+  rankings(start: Int, type: RankingType!): RankingListing!
+}
+
+"""
+A jump map
+"""
+type Map {
+  id: String!
+  name: String!
+  authors: [Author!]!
+  videos: MapVideos!
+  tiers: Tiers!
+  zones: Zones!
+  records(
+    zoneType: ZoneType
+    zoneId: Int
+    start: Int
+    limit: Int
+  ): ClassRecordListing!
+}
+
+type Author {
+  id: Int!
+  name: String!
+  mapCount: Int!
+  player: Player
+}
+
+type Player {
+  id: Int!
+  name: String!
+  country: String
+  countryCode: String
+  steamId: String!
+  firstSeen: Float!
+  lastSeen: Float!
+  ranks: Ranks!
+  countryRanks: Ranks!
+  stats: StatsCollection!
+}
+
+type Ranks {
+  overall: Rank!
+  soldier: Rank!
+  demoman: Rank!
+}
+
+type Rank {
+  points: Float!
+  rank: Int!
+  totalRanked: Int!
+  title: String
+}
+
+type StatsCollection {
+  pr: Stats!
+  wr: Stats!
+  top: Stats!
+}
+
+type Stats {
+  bonus: Stat!
+  course: Stat!
+  map: Stat!
+  trick: Stat!
+}
+
+type Stat {
+  count: Int!
+  points: Int!
+}
+
+type MapVideos {
+  soldier: String
+  demoman: String
+}
+
+type Tiers {
+  soldier: Int
+  demoman: Int
+}
+
+type Zones {
+  checkpoint: [Zone!]!
+  linear: [Zone!]!
+  map: [Zone!]!
+  mapEnd: [Zone!]!
+}
+
+"""
+A jump map
+"""
+type Zone {
+  id: Int!
+  map: Map!
+  type: String!
+  zoneindex: Int!
+  customName: String
+}
+
+type ClassRecordListing {
+  zone: Zone!
+  tiers: Tiers!
+  soldier: [Record!]!
+  demoman: [Record!]!
+}
+
+type Record {
+  id: Int!
+  player: Player!
+  duration: Float!
+  rank: Int!
+  date: Float!
+  tiers: Tiers!
+  map: Map!
+  zone: Zone!
+  demo: Demo
+  class: Class!
+  demoStartTick: Int
+  demoEndTick: Int
+  server: Server!
+}
+
+type Demo {
+  id: Int!
+  map: Map!
+  filename: String
+  date: Float!
+  url: String
+  recording: Boolean!
+  requested: Boolean!
+  expired: Boolean!
+  deleted: Boolean!
+  uploader: Player
+  server: Server!
+}
+
+type Server {
+  id: Int
+  currentMap: Map
+  freeDisk: Int
+  gameVersion: Int
+  hostName: String
+  maxPlayers: Int
+  nextMap: Map
+  playerCount: Int
+  players: [Player!]
+  address: String
+  country: String
+  hidden: Boolean
+  online: Boolean
+  name: String
+  port: Int
+  shortname: String
+  demos: [Demo!]
+}
+
+enum Class {
+  SOLDIER
+  DEMOMAN
+}
+
+enum ZoneType {
+  BONUS
+  MAP
+  COURSE
+}
+
+type Activity {
+  bonusWrs: [Record!]!
+  courseWrs: [Record!]!
+  mapWrs: [Record!]!
+  mapTops: [Record!]!
+}
+
+type RankingListing {
+  count: Int
+  players: [Ranking]
+}
+
+type Ranking {
+  player: Player!
+  rank: Int!
+  points: Float!
+}
+
+enum RankingType {
+  OVERALL
+  SOLDIER
+  DEMOMAN
+}
