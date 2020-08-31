@@ -26,6 +26,7 @@ type Map {
     start: Int
     limit: Int
   ): ClassRecordListing!
+  record(zoneType: ZoneType, zoneId: Int, playerId: Int!, class: Class!): Record
 }
 
 type Author {
@@ -46,6 +47,7 @@ type Player {
   ranks: Ranks!
   countryRanks: Ranks!
   stats: StatsCollection!
+  record(zoneType: ZoneType, zoneId: Int, playerId: Int!, class: Class!): Record
 }
 
 type Ranks {
@@ -79,41 +81,6 @@ type Stat {
   points: Int!
 }
 
-type MapVideos {
-  soldier: String
-  demoman: String
-}
-
-type Tiers {
-  soldier: Int
-  demoman: Int
-}
-
-type Zones {
-  checkpoint: [Zone!]!
-  linear: [Zone!]!
-  map: [Zone!]!
-  mapEnd: [Zone!]!
-}
-
-"""
-A jump map
-"""
-type Zone {
-  id: Int!
-  map: Map!
-  type: String!
-  zoneindex: Int!
-  customName: String
-}
-
-type ClassRecordListing {
-  zone: Zone!
-  tiers: Tiers!
-  soldier: [Record!]!
-  demoman: [Record!]!
-}
-
 type Record {
   id: Int!
   player: Player!
@@ -128,6 +95,22 @@ type Record {
   demoStartTick: Int
   demoEndTick: Int
   server: Server!
+}
+
+type Tiers {
+  soldier: Int
+  demoman: Int
+}
+
+"""
+A jump map
+"""
+type Zone {
+  id: Int!
+  map: Map!
+  type: String!
+  zoneindex: Int!
+  customName: String
 }
 
 type Demo {
@@ -175,11 +158,30 @@ enum ZoneType {
   COURSE
 }
 
+type MapVideos {
+  soldier: String
+  demoman: String
+}
+
+type Zones {
+  checkpoint: [Zone!]!
+  linear: [Zone!]!
+  map: [Zone!]!
+  mapEnd: [Zone!]!
+}
+
+type ClassRecordListing {
+  zone: Zone!
+  tiers: Tiers!
+  soldier: [Record!]!
+  demoman: [Record!]!
+}
+
 type Activity {
-  bonusWrs: [Record!]!
-  courseWrs: [Record!]!
-  mapWrs: [Record!]!
-  mapTops: [Record!]!
+  bonusWrs(start: Int, limit: Int): [Record!]!
+  courseWrs(start: Int, limit: Int): [Record!]!
+  mapWrs(start: Int, limit: Int): [Record!]!
+  mapTops(start: Int, limit: Int): [Record!]!
 }
 
 type RankingListing {
