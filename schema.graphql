@@ -47,7 +47,13 @@ type Player {
   ranks: Ranks!
   countryRanks: Ranks!
   stats: StatsCollection!
-  record(zoneType: ZoneType, zoneId: Int, playerId: Int!, class: Class!): Record
+  record(
+    mapId: Int
+    mapName: String
+    zoneType: ZoneType
+    zoneId: Int
+    class: Class!
+  ): Record
 }
 
 type Ranks {
