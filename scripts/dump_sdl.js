@@ -1,6 +1,6 @@
 const fs = require("fs");
 const { printSchema } = require("graphql");
-const schema = require("../dist/schema").default;
+const { schema } = require("../dist/schema");
 
 const FILE_NAME = "schema.graphql";
 

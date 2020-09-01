@@ -14,7 +14,7 @@ Below is an example usage:
 
 ```js
 const { graphql } = require("graphql");
-const schema = require("tempus-api-graphql").default;
+const { schema } = require("tempus-api-graphql");
 
 const query = `
 {

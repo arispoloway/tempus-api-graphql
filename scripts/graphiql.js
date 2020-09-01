@@ -2,7 +2,7 @@
 const express = require("express");
 const { graphqlHTTP } = require("express-graphql");
 /* eslint-enable import/no-extraneous-dependencies */
-const schema = require("../dist/schema").default;
+const { schema } = require("../dist/schema");
 
 const app = express();
 app.use(
