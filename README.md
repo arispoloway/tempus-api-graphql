@@ -26,18 +26,16 @@ const query = `
         country
       }
     }
-    records(limit: 1) {
-      soldier {
-        duration
-        player {
+    records(limit: 1, class: SOLDIER) {
+      duration
+      player {
+        name
+      }
+      demo {
+        url
+        server {
           name
-        }
-        demo {
-          url
-          server {
-            name
-            online
-          }
+          online
         }
       }
     }
