@@ -16,6 +16,7 @@ module.exports = {
       rules: {
         "import/no-cycle": "off",
         "class-methods-use-this": "off",
+        "import/prefer-default-export": "off",
       },
     },
   ],
