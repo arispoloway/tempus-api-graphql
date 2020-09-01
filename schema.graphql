@@ -25,7 +25,8 @@ type Map {
     zoneId: Int
     start: Int
     limit: Int
-  ): ClassRecordListing!
+    class: Class!
+  ): [Record!]!
   record(zoneType: ZoneType, zoneId: Int, playerId: Int!, class: Class!): Record
 }
 
@@ -174,13 +175,6 @@ type Zones {
   linear: [Zone!]!
   map: [Zone!]!
   mapEnd: [Zone!]!
-}
-
-type ClassRecordListing {
-  zone: Zone!
-  tiers: Tiers!
-  soldier: [Record!]!
-  demoman: [Record!]!
 }
 
 type Activity {
