@@ -1,12 +1,13 @@
 type Query {
   map(name: String, id: Int): Map
   maps(search: String, start: Int, limit: Int): [Map!]!
-  player(id: Int): Player
-  record(id: Int): Record
-  demo(id: Int): Demo
-  server(id: Int): Server
+  player(id: Int!): Player
+  record(id: Int!): Record
+  demo(id: Int!): Demo
+  server(id: Int!): Server
   servers(search: String, start: Int, limit: Int): [Server!]!
   activity: Activity!
+  players(search: String, start: Int, limit: Int): [Player!]!
   rankings(start: Int, type: RankingType!): RankingListing!
 }
 
