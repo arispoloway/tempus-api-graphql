@@ -169,7 +169,7 @@ type Activity {
 }
 
 type RankingListing {
-  count: Int
+  count: Int!
   entries: [Ranking!]!
 }
 
