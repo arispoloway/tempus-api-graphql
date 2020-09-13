@@ -11,9 +11,7 @@ type Query {
   rankings(start: Int, type: RankingType!): RankingListing!
 }
 
-"""
-A jump map
-"""
+"""A jump map"""
 type Map {
   id: String!
   name: String!
@@ -21,13 +19,7 @@ type Map {
   videos: MapVideos!
   tiers: Tiers!
   zones: Zones!
-  records(
-    zoneType: ZoneType
-    zoneId: Int
-    start: Int
-    limit: Int
-    class: Class!
-  ): [Record!]!
+  records(zoneType: ZoneType, zoneId: Int, start: Int, limit: Int, class: Class!): [Record!]!
   record(zoneType: ZoneType, zoneId: Int, playerId: Int!, class: Class!): Record
 }
 
@@ -49,13 +41,7 @@ type Player {
   ranks: Ranks!
   countryRanks: Ranks!
   stats: StatsCollection!
-  record(
-    mapId: Int
-    mapName: String
-    zoneType: ZoneType
-    zoneId: Int
-    class: Class!
-  ): Record
+  record(mapId: Int, mapName: String, zoneType: ZoneType, zoneId: Int, class: Class!): Record
 }
 
 type Ranks {
@@ -110,9 +96,6 @@ type Tiers {
   demoman: Int
 }
 
-"""
-A jump map
-"""
 type Zone {
   id: Int!
   map: Map!
@@ -186,8 +169,8 @@ type Activity {
 }
 
 type RankingListing {
-  count: Int
-  players: [Ranking]
+  count: Int!
+  entries: [Ranking!]!
 }
 
 type Ranking {
