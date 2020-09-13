@@ -110,9 +110,6 @@ type Tiers {
   demoman: Int
 }
 
-"""
-A jump map
-"""
 type Zone {
   id: Int!
   map: Map!
@@ -187,7 +184,7 @@ type Activity {
 
 type RankingListing {
   count: Int
-  players: [Ranking]
+  entries: [Ranking]
 }
 
 type Ranking {
