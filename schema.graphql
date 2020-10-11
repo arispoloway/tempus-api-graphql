@@ -21,6 +21,7 @@ type Map {
   zones: Zones!
   records(zoneType: ZoneType, zoneId: Int, start: Int, limit: Int, class: Class!): [Record!]!
   record(zoneType: ZoneType, zoneId: Int, playerId: Int!, class: Class!): Record
+  wr(class: Class!): Record
 }
 
 type Author {
@@ -89,6 +90,7 @@ type Record {
   demoStartTick: Int
   demoEndTick: Int
   server: Server!
+  splits: [Split!]!
 }
 
 type Tiers {
@@ -141,6 +143,14 @@ type Server {
 enum Class {
   SOLDIER
   DEMOMAN
+}
+
+type Split {
+  type: String!
+  zoneindex: Int!
+  customName: String
+  duration: Float
+  comparedDuration: Float
 }
 
 enum ZoneType {
