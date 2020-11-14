@@ -155,8 +155,14 @@ type Split {
 
 enum ZoneType {
   BONUS
-  MAP
+  BONUS_END
+  CHECKPOINT
   COURSE
+  COURSE_END
+  MAP
+  MAP_END
+  MISC
+  TRICK
 }
 
 type MapVideos {
@@ -165,10 +171,16 @@ type MapVideos {
 }
 
 type Zones {
+  bonus: [Zone!]!
+  bonusEnd: [Zone!]!
   checkpoint: [Zone!]!
+  course: [Zone!]!
+  courseEnd: [Zone!]!
   linear: [Zone!]!
   map: [Zone!]!
   mapEnd: [Zone!]!
+  misc: [Zone!]!
+  trick: [Zone!]!
 }
 
 type Activity {
