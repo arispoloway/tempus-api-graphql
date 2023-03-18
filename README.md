@@ -6,9 +6,15 @@ A [GraphQL](https://graphql.org/) wrapper for the [tempus.xyz](https://tempus.xy
 
 ## Usage
 
+### Hosted
+
+This GraphQL API is hosted at [tempus.nolem.me](https://tempus.nolem.me) via [tempus-api-graphql-worker](https://github.com/arispoloway/tempus-api-graphql-worker).
+
+Using this hosted service with your favorite GraphQL client/library will likely be the simplest way to access this GraphQL API.
+
 ### As a dependency of another project
 
-This package exports a `GraphQLSchema` object to be used with the `graphql` package ([link](https://www.npmjs.com/package/graphql)).
+For JS projects, this package exports a `GraphQLSchema` object to be used with the `graphql` package ([link](https://www.npmjs.com/package/graphql)).
 
 Below is an example usage:
 
