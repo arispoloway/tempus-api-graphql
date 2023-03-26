@@ -1,7 +1,7 @@
 {
   "name": "tempus-api-graphql",
-  "version": "0.5.1",
-  "description": "A GraphQL wrapper for the tempus.xyz api",
+  "version": "0.5.2",
+    "description": "A GraphQL wrapper for the tempus api (tempus2.xyz)",
   "main": "dist/schema.js",
   "scripts": {
     "test": "npm run build && jest",

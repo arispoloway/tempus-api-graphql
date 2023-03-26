@@ -1,6 +1,6 @@
 # tempus-api-graphql
 
-A [GraphQL](https://graphql.org/) wrapper for the [tempus.xyz](https://tempus.xyz/) API. The spiritual successor of [tempus-api](https://github.com/arispoloway/tempus-api).
+A [GraphQL](https://graphql.org/) wrapper for the [tempus](https://tempus2.xyz/) API. The spiritual successor of [tempus-api](https://github.com/arispoloway/tempus-api).
 
 [![npm version](https://badge.fury.io/js/tempus-api-graphql.svg)](https://badge.fury.io/js/tempus-api-graphql)
 
