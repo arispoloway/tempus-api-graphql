@@ -1,6 +1,6 @@
 {
   "name": "tempus-api-graphql",
-  "version": "0.5.2",
+  "version": "0.5.3",
     "description": "A GraphQL wrapper for the tempus api (tempus2.xyz)",
   "main": "dist/schema.js",
   "scripts": {
